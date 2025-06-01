@@ -1,35 +1,50 @@
+// Filename: Services.jsx
+// Author: Ken Suzurimi.
+// Student ID: 301459563
+// Date: 2025-05-31
+// Description: This component displays the Services page, showing a list of services
+// with simple emoji icons and brief descriptions.
+
 function Services() {
+  // List of services with emoji and description
   const services = [
     {
+      icon: "💻",
       title: "Web Development",
-      emoji: "💻",
-      description: "Creating responsive websites using HTML, CSS, JavaScript, and React.",
+      description: "Building responsive websites using HTML, CSS, JavaScript, and React.",
     },
     {
-      title: "C# Desktop Applications",
-      emoji: "🖥️",
-      description: "Building Windows Forms and console applications using C# and .NET.",
+      icon: "🖥️",
+      title: "Desktop Applications",
+      description: "Creating efficient Windows desktop apps using C# and .NET.",
     },
     {
-      title: "Unity Game Development",
-      emoji: "🎮",
-      description: "Developing 2D games with Unity, including custom physics and gameplay.",
+      icon: "🎮",
+      title: "Game Prototyping",
+      description: "Developing fun and creative games using Unity and C# scripting.",
     },
   ];
 
   return (
-    <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
-      <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>My Services</h1>
-      <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+    <div style={{ padding: '2rem', maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
+      <h1>My Services</h1>
+
+      {/* Display list of services */}
+      <div style={{
+        display: 'flex',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
+        gap: '2rem',
+        marginTop: '2rem'
+      }}>
         {services.map((service, index) => (
           <div key={index} style={{
             border: '1px solid #ccc',
-            borderRadius: '8px',
-            padding: '1rem',
-            textAlign: 'center',
-            fontSize: '1.1rem'
+            borderRadius: '10px',
+            padding: '1.5rem',
+            width: '250px'
           }}>
-            <div style={{ fontSize: '3rem' }}>{service.emoji}</div>
+            <div style={{ fontSize: '2.5rem' }}>{service.icon}</div>
             <h2 style={{ marginTop: '1rem' }}>{service.title}</h2>
             <p>{service.description}</p>
           </div>

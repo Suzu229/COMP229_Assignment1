@@ -1,8 +1,17 @@
+// Filename: Contact.jsx
+// Author: Ken Suzurimi.
+// Student ID: 301459563
+// Date: 2025-05-31
+// Description: This component renders the Contact page. It displays basic contact info
+// and includes an interactive form that captures user input and redirects to the Home page.
+
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Contact() {
   const navigate = useNavigate();
+
+  // Form state
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -11,6 +20,7 @@ function Contact() {
     message: "",
   });
 
+  // Handle form input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,24 +28,25 @@ function Contact() {
     });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
-
     console.log("Form submitted:", formData);
     alert("Message sent!");
-    navigate("/");
+    navigate("/"); // Redirect to Home
   };
 
   return (
     <div style={{ padding: "2rem", maxWidth: "600px", margin: "0 auto" }}>
       <h1>Contact Me</h1>
 
+      {/* Contact details */}
       <div style={{ marginBottom: "2rem" }}>
-        <p><strong>Ken Suzurimi</strong></p>
-        <p>Email: kuzurim@my.centennialcollege.ca</p>
-        <p>Phone: +1 (437) 433 - 7849</p>
+        <p>Email: ken@example.com</p>
+        <p>Phone: 123-456-7890</p>
       </div>
 
+      {/* Contact form */}
       <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
         <input
           type="text"

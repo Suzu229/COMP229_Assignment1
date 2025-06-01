@@ -1,4 +1,12 @@
+// Filename: Projects.jsx
+// Author: Ken Suzurimi.
+// Student ID: 301459563
+// Date: 2025-05-31
+// Description: This component displays the Projects page, showcasing three highlighted projects
+// with titles, descriptions, and associated images or visual elements.
+
 function Projects() {
+  // List of project data
   const projects = [
     {
       title: "Memory Reversi",
@@ -23,9 +31,19 @@ function Projects() {
   return (
     <div style={{ padding: '2rem', maxWidth: '1000px', margin: '0 auto' }}>
       <h1 style={{ textAlign: 'center', marginBottom: '2rem' }}>My Projects</h1>
-      <div style={{ display: 'grid', gap: '2rem', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))' }}>
+
+      {/* Render project cards using grid layout */}
+      <div style={{
+        display: 'grid',
+        gap: '2rem',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))'
+      }}>
         {projects.map((project, index) => (
-          <div key={index} style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '1rem' }}>
+          <div key={index} style={{
+            border: '1px solid #ccc',
+            borderRadius: '8px',
+            padding: '1rem'
+          }}>
             <img
               src={project.image}
               alt={project.title}
